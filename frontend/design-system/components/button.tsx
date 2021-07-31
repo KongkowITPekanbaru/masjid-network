@@ -6,6 +6,15 @@ import { fontSizes, spacing } from '../units'
 
 import { isObjectEmpty } from '../../utils/isObjectEmpty'
 
+interface ButtonProps {
+  color?: string;
+  size?: string;
+  variant?: string;
+  enableElevation?: boolean;
+  disabled?: boolean;
+  theme?: Record<string, Record<string, unknown>>;
+}
+
 const StyledButton = ({
   color,
   size,
@@ -13,7 +22,7 @@ const StyledButton = ({
   enableElevation,
   disabled,
   theme,
-}) => {
+}: ButtonProps) => {
   if (isObjectEmpty(theme)) {
     theme = defaultTheme
   }
