@@ -1,4 +1,5 @@
 import { AppProps } from 'next/app'
+
 import ThemeWrapper from '../design-system/theme-wrapper'
 
 export default function App({
