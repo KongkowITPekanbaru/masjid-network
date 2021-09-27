@@ -1,6 +1,7 @@
 import styled from '@emotion/styled';
 import isPropValid from '@emotion/is-prop-valid';
 
+
 import { theme as defaultTheme } from '../theme'
 import { fontSizes, spacing } from '../units'
 
@@ -100,6 +101,7 @@ const getPropsByVariant = ({ variant, color, theme }) => {
     };
 
 
+
   const variants = {
     outline: colorInPalette
       ? outlineVariantPropsByPalette
@@ -111,6 +113,7 @@ const getPropsByVariant = ({ variant, color, theme }) => {
 
   return variants[variant] || variants.solid;
 };
+
 
 const buttonSizeProps = {
   small: {
@@ -125,7 +128,9 @@ const buttonSizeProps = {
     fontSize: fontSizes['medium'],
     padding: `${spacing['medium']} ${spacing['large']}`,
   },
+
 };
+
 
 
 const buttonConfig = {
@@ -134,3 +139,4 @@ const buttonConfig = {
 };
 
 export const Button = styled('button', buttonConfig)(StyledButton);
+
