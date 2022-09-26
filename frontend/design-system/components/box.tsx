@@ -17,10 +17,10 @@ const defaultProps = {
 }
 
 interface BoxProps extends React.CSSProperties {
-    paddingX: number;
-    paddingY: number;
-    marginX: number;
-    marginY: number;
+    paddingX?: number;
+    paddingY?: number;
+    marginX?: number;
+    marginY?: number;
     theme: Theme;
 }
 
@@ -66,6 +66,7 @@ const StyledBox = ({
     }
 
     return {
+        ...props,
         padding,
         paddingTop,
         paddingRight,
