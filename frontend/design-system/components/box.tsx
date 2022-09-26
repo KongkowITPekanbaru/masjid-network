@@ -4,6 +4,25 @@ import isPropValid from '@emotion/is-prop-valid'
 import { spacing } from '../units'
 import { theme as defaultTheme } from '../theme'
 import { isObjectEmpty } from '../../utils/isObjectEmpty'
+import { Theme } from '@emotion/react'
+
+const defaultProps = {
+    paddingX: 1,
+    paddingY: 1,
+    marginX: 1,
+    marginY: 1,
+    width: 'auto',
+    display: 'block',
+    theme: defaultTheme,
+}
+
+interface BoxProps extends React.CSSProperties {
+    paddingX: number;
+    paddingY: number;
+    marginX: number;
+    marginY: number;
+    theme: Theme;
+}
 
 const StyledBox = ({
     paddingX,
@@ -14,7 +33,7 @@ const StyledBox = ({
     display,
     theme,
     ...props
-}) => {
+}: BoxProps = defaultProps) => {
     if (isObjectEmpty(theme)) {
         theme = defaultTheme;
     }
